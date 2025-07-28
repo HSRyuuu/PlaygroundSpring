@@ -1,40 +1,48 @@
-HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# Gradle build output
+/build/
+**/build/
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+# Gradle Wrapper logs
+gradle-app.setting
 
-### IntelliJ IDEA ###
-.idea
-*.iws
+# IntelliJ IDEA
 *.iml
-*.ipr
+.idea/
+out/
 
-### docker ###
-!**/docker/
-**/docker/master_db
-**/docker/slave_db
+# Eclipse
+.project
+.classpath
+.settings/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
+# VS Code
 .vscode/
 
-.gradle
+# OS 별 불필요한 파일
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# 환경 파일
+*.env
+*.local
+
+# Spotless cache
+.spotless*
+
+# Kotlin/Java compile output
+*.class
+*.jar
+*.war
+
+# Node/npm stuff (if present)
+node_modules/
+dist/
+
+# Ignore all module build outputs
+**/build/
+**/.gradle/
