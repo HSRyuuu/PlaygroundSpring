@@ -13,7 +13,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @ExcelSheet(name = "Users")
-public class ExcelUserDto {
+public class SampleUserDto {
   @ExcelColumn(headerName = "순번")
   private int number; // 순번
   @ExcelColumn(headerName = "이름")
@@ -26,7 +26,7 @@ public class ExcelUserDto {
   private String contact; // 연락처
 
   @Builder
-  public ExcelUserDto(int number, String name, int age, String gender, String contact) {
+  public SampleUserDto(int number, String name, int age, String gender, String contact) {
     this.number = number;
     this.name = name;
     this.age = age;

@@ -1,9 +1,9 @@
-package com.hsryuuu.base.excel.sample;
+package com.hsryuuu.base.excel;
 
 import com.hsryuuu.base.application.response.StandardResponse;
 import com.hsryuuu.base.application.util.LogUtils;
 import com.hsryuuu.base.excel.constant.ExcelSampleData;
-import com.hsryuuu.base.excel.model.ExcelUserDto;
+import com.hsryuuu.base.excel.model.SampleUserDto;
 import com.hsryuuu.base.excel.util.ExcelUtils;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,7 +20,6 @@ import org.apache.poi.ss.usermodel.DataValidationHelper;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.ss.util.CellRangeAddressList;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.core.io.ByteArrayResource;
@@ -31,9 +30,9 @@ import org.springframework.web.multipart.MultipartFile;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class SampleBasicExcelService {
+public class BasicPoiExcelService {
 
-  public StandardResponse<List<ExcelUserDto>> extractExcelData(MultipartFile file) {
+  public StandardResponse<List<SampleUserDto>> extractExcelData(MultipartFile file) {
     // 파일 정보
     log.debug("파일명: {}", file.getOriginalFilename());
     log.debug("파일 크기: {} bytes", file.getSize());
@@ -44,7 +43,7 @@ public class SampleBasicExcelService {
       Sheet sheet = workbook.getSheetAt(0);
 
       // 추출할 데이터
-      List<ExcelUserDto> dataList = new ArrayList<>();
+      List<SampleUserDto> dataList = new ArrayList<>();
 
       // 헤더 행 읽기
       List<String> headers = new ArrayList<>();
@@ -60,7 +59,7 @@ public class SampleBasicExcelService {
         Row row = sheet.getRow(i);
 
         // 행 들을 리스트 객체로 구성
-        dataList.add(ExcelUserDto.builder().number((int) row.getCell(0).getNumericCellValue()) // 순번
+        dataList.add(SampleUserDto.builder().number((int) row.getCell(0).getNumericCellValue()) // 순번
             .name(row.getCell(1).getStringCellValue()) // 이름
             .age((int) row.getCell(2).getNumericCellValue()) // 나이
             .gender(row.getCell(3).getStringCellValue()) // 성별
