@@ -4,6 +4,7 @@ package com.hsryuuu.base.excel;
 import com.hsryuuu.base.application.response.StandardResponse;
 import com.hsryuuu.base.excel.constant.ExcelConstants;
 import com.hsryuuu.base.excel.model.ExcelUserDto;
+import com.hsryuuu.base.excel.sample.SampleBasicExcelService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -20,10 +21,10 @@ import org.springframework.web.multipart.MultipartFile;
 @Tag(name= "엑셀 파일 처리", description = "")
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/excel/poi")
-public class SampleApachePoiController {
+@RequestMapping("/api/excel/basic")
+public class SampleBasicExcelController {
 
-  private final SampleApachePoiService sampleApachePoiService;
+  private final SampleBasicExcelService sampleBasicExcelService;
 
   /**
    * 엑셀 업로드 - 데이터 추출
@@ -33,7 +34,7 @@ public class SampleApachePoiController {
    */
   @PostMapping("/extract")
   public StandardResponse<List<ExcelUserDto>> extractExcelData(@RequestParam("file") MultipartFile file) {
-    return sampleApachePoiService.extractExcelData(file);
+    return sampleBasicExcelService.extractExcelData(file);
   }
 
   /**
@@ -42,7 +43,7 @@ public class SampleApachePoiController {
   @GetMapping("/download")
   public ResponseEntity<Resource> downloadExcel() {
 
-    Resource result = sampleApachePoiService.excelDownload();
+    Resource result = sampleBasicExcelService.excelDownload();
 
     return ResponseEntity.ok()
         .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=userList.xlsx")
@@ -55,7 +56,7 @@ public class SampleApachePoiController {
    */
   @GetMapping("/download/template")
   public ResponseEntity<Resource> downloadExcelTemplate() {
-    Resource resource = sampleApachePoiService.downloadExcelTemplate();
+    Resource resource = sampleBasicExcelService.downloadExcelTemplate();
     return ResponseEntity.ok()
         .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=userAddTempleate.xlsx")
         .contentType(ExcelConstants.MEDIA_TYPE_XLSX)

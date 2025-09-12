@@ -1,8 +1,8 @@
-package com.hsryuuu.base.excel;
+package com.hsryuuu.base.excel.sample;
 
 import com.hsryuuu.base.application.response.StandardResponse;
 import com.hsryuuu.base.application.util.LogUtils;
-import com.hsryuuu.base.excel.constant.ExcelConstants;
+import com.hsryuuu.base.excel.constant.ExcelSampleData;
 import com.hsryuuu.base.excel.model.ExcelUserDto;
 import com.hsryuuu.base.excel.util.ExcelUtils;
 import java.io.IOException;
@@ -31,16 +31,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class SampleApachePoiService {
-  // 샘플 헤더
-  private static final String[] SAMPLE_HEADERS = {"순번", "이름", "나이", "성별", "연락처"};
-  // 샘플 데이터
-  private static final Object[][] SAMPLE_DATA =  {
-      {1, "한국인", 35, "남", "010-0000-0000"},
-      {2, "박원희", 11, "여", "010-1234-0000"},
-      {3, "이국한", 23, "여", "010-5678-0000"},
-      {4, "김명희", 27, "여", "010-9010-0000"},
-      {5, "김철민", 29, "남", "010-8888-0000"},};
+public class SampleBasicExcelService {
 
   public StandardResponse<List<ExcelUserDto>> extractExcelData(MultipartFile file) {
     // 파일 정보
@@ -48,21 +39,12 @@ public class SampleApachePoiService {
     log.debug("파일 크기: {} bytes", file.getSize());
 
     try {
-      if (file.isEmpty()) {
-        throw new RuntimeException("비어있는 파일입니다.");
-      }
+      // WorkBook
+      Workbook workbook = ExcelUtils.getWorkbook(file);
+      Sheet sheet = workbook.getSheetAt(0);
 
-      // 파일 확장자 검증
-      String filename = file.getOriginalFilename();
-      if (!filename.endsWith(ExcelConstants.EXTENSION_XLSX) && !filename.endsWith(ExcelConstants.EXTENSION_XLS)) {
-        throw new RuntimeException("Excel 파일만 업로드 가능합니다.");
-      }
       // 추출할 데이터
       List<ExcelUserDto> dataList = new ArrayList<>();
-
-      // WorkBook
-      Workbook workbook = WorkbookFactory.create(file.getInputStream());
-      Sheet sheet = workbook.getSheetAt(0);
 
       // 헤더 행 읽기
       List<String> headers = new ArrayList<>();
@@ -106,30 +88,30 @@ public class SampleApachePoiService {
 
     // 헤더 행 생성
     Row headerRow = sheet.createRow(0);
-    for (int i = 0; i < SAMPLE_HEADERS.length; i++) {
+    for (int i = 0; i < ExcelSampleData.SAMPLE_HEADERS.length; i++) {
       Cell cell = headerRow.createCell(i);
-      cell.setCellValue(SAMPLE_HEADERS[i]);
+      cell.setCellValue(ExcelSampleData.SAMPLE_HEADERS[i]);
     }
 
     // Sheet 내에 헤더 / 데이터 행 구성
-    for (int i = 0; i < SAMPLE_DATA.length; i++) {
+    for (int i = 0; i < ExcelSampleData.SAMPLE_DATA.length; i++) {
       Row row = sheet.createRow(i + 1);
-      for (int j = 0; j < SAMPLE_DATA[i].length; j++) {
+      for (int j = 0; j < ExcelSampleData.SAMPLE_DATA[i].length; j++) {
         Cell cell = row.createCell(j);
 
         // 문자 처리
-        if (SAMPLE_DATA[i][j] instanceof String) {
-          cell.setCellValue((String) SAMPLE_DATA[i][j]);
+        if (ExcelSampleData.SAMPLE_DATA[i][j] instanceof String) {
+          cell.setCellValue((String) ExcelSampleData.SAMPLE_DATA[i][j]);
         }
         // 숫자 처리
-        if (SAMPLE_DATA[i][j] instanceof Integer) {
-          cell.setCellValue((Integer) SAMPLE_DATA[i][j]);
+        if (ExcelSampleData.SAMPLE_DATA[i][j] instanceof Integer) {
+          cell.setCellValue((Integer) ExcelSampleData.SAMPLE_DATA[i][j]);
         }
       }
     }
 
     // 열 너비 자동 조정
-    for (int i = 0; i < SAMPLE_HEADERS.length; i++) {
+    for (int i = 0; i < ExcelSampleData.SAMPLE_HEADERS.length; i++) {
       sheet.autoSizeColumn(i);
     }
 
