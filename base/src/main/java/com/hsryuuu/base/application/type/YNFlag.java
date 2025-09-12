@@ -1,9 +1,9 @@
-package com.hsryuuu.base.type;
+package com.hsryuuu.base.application.type;
 
 
 
-import com.hsryuuu.base.exception.ErrorCode;
-import com.hsryuuu.base.exception.GlobalException;
+import com.hsryuuu.base.application.exception.ErrorCode;
+import com.hsryuuu.base.application.exception.GlobalException;
 import lombok.RequiredArgsConstructor;
 
 import java.util.Collections;

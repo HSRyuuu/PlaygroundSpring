@@ -1,4 +1,4 @@
-package com.hsryuuu.base.config;
+package com.hsryuuu.base.application.config;
 
 import lombok.NonNull;
 import org.springframework.context.annotation.Configuration;

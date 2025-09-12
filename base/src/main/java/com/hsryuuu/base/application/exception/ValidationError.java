@@ -1,4 +1,4 @@
-package com.hsryuuu.base.exception;
+package com.hsryuuu.base.application.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,9 +1,8 @@
 package com.hsryuuu.base;
 
-import com.hsryuuu.base.exception.ErrorCode;
-import com.hsryuuu.base.exception.GlobalException;
+import com.hsryuuu.base.application.exception.ErrorCode;
+import com.hsryuuu.base.application.exception.GlobalException;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController

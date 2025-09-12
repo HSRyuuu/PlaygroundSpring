@@ -1,6 +1,6 @@
-package com.hsryuuu.base.response;
+package com.hsryuuu.base.application.response;
 
-import com.hsryuuu.base.type.OperationResult;
+import com.hsryuuu.base.application.type.OperationResult;
 import lombok.*;
 import org.springframework.http.HttpStatus;
 
@@ -37,6 +37,11 @@ public class StandardResponse<T> {
         this(OperationResult.ERROR, HttpStatus.INTERNAL_SERVER_ERROR.value(), e.getMessage(), null);
     }
 
+    public static <T> StandardResponse<T> error(String message) {
+        return new StandardResponse<>(OperationResult.ERROR, HttpStatus.INTERNAL_SERVER_ERROR.value(), message, null);
+    }
+
+
     //성공 응답
     public StandardResponse(T data) {
         this(OperationResult.SUCCESS, HttpStatus.OK.value(), "", data);
@@ -52,9 +57,17 @@ public class StandardResponse<T> {
     /**
      * default 성공 응답
      */
+    public static <T> StandardResponse<T> defaultSuccess(String message) {
+        return new StandardResponse<>(OperationResult.SUCCESS, HttpStatus.OK.value(), message, null);
+    }
+
+    /**
+     * default 성공 응답
+     */
     public static <T> StandardResponse<T> defaultSuccess(T data) {
         return new StandardResponse<>(OperationResult.SUCCESS, HttpStatus.OK.value(), "", data);
     }
+
 
 
 }

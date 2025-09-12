@@ -1,7 +1,7 @@
-package com.hsryuuu.base.exception;
+package com.hsryuuu.base.application.exception;
 
-import com.hsryuuu.base.response.StandardResponse;
-import com.hsryuuu.base.type.OperationResult;
+import com.hsryuuu.base.application.response.StandardResponse;
+import com.hsryuuu.base.application.type.OperationResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

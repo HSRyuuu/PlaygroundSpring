@@ -1,4 +1,4 @@
-package com.hsryuuu.base.response;
+package com.hsryuuu.base.application.response;
 
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.core.MethodParameter;

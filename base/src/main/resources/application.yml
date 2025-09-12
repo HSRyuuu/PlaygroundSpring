@@ -5,7 +5,7 @@ spring:
     init:
       mode: never
   datasource:
-    url: jdbc:postgresql://localhost:5432/eventus
+    url: jdbc:postgresql://localhost:5432/testdb
     username: root
     password: test
     driver-class-name: org.postgresql.Driver
@@ -21,7 +21,19 @@ spring:
 
 springdoc:
   api-docs:
-    path: /api-docs
+    enabled: true
   swagger-ui:
-    path: /swagger-ui
+    enabled: true
     display-request-duration: true
+
+logging:
+  level:
+    com.hsryuuu: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    feign.Logger: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.web.cors: TRACE
+    org.springframework.security.web.FilterChainProxy: DEBUG
+    org.springframework.security.web.access: DEBUG
+    org.springframework.security.web.access.intercept: DEBUG

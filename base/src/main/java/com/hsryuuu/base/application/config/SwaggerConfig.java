@@ -1,4 +1,4 @@
-package com.hsryuuu.base.config;
+package com.hsryuuu.base.application.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
