@@ -1,4 +1,4 @@
-package com.hsryuuu.traffic.domain.event.type
+package com.hsryuuu.traffic.domain.event.event.type
 
 enum class EventStatus {
     READY,

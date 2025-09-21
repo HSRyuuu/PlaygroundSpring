@@ -1,8 +1,8 @@
-package com.hsryuuu.traffic.domain.event
+package com.hsryuuu.traffic.domain.event.event
 
-import com.hsryuuu.traffic.domain.event.dto.EventCreateRequest
-import com.hsryuuu.traffic.domain.event.dto.EventResponse
-import com.hsryuuu.traffic.domain.event.dto.EventUpdateRequest
+import com.hsryuuu.traffic.domain.event.event.dto.EventCreateRequest
+import com.hsryuuu.traffic.domain.event.event.dto.EventResponse
+import com.hsryuuu.traffic.domain.event.event.dto.EventUpdateRequest
 import jakarta.persistence.EntityNotFoundException
 import jakarta.transaction.Transactional
 import org.springframework.stereotype.Service

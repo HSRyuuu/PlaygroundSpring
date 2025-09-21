@@ -1,7 +1,7 @@
-package com.hsryuuu.traffic.domain.event.dto
+package com.hsryuuu.traffic.domain.event.event.dto
 
-import com.hsryuuu.traffic.domain.event.type.EventStatus
-import com.hsryuuu.traffic.domain.event.type.RewardType
+import com.hsryuuu.traffic.domain.event.event.type.EventStatus
+import com.hsryuuu.traffic.domain.event.event.type.RewardType
 import java.time.LocalDateTime
 
 data class EventUpdateRequest(
