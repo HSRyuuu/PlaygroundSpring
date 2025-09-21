@@ -1,4 +1,4 @@
-package com.hsryuuu.traffic.`kafka-event`.participation.dto
+package com.hsryuuu.traffic.kafkaevent.participation.dto
 
 import java.util.*
 

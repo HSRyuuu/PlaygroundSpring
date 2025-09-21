@@ -1,8 +1,8 @@
-package com.hsryuuu.traffic.`kafka-event`.event.dto
+package com.hsryuuu.traffic.kafkaevent.event.dto
 
-import com.hsryuuu.traffic.domain.event.event.Event
-import com.hsryuuu.traffic.domain.event.event.type.EventStatus
-import com.hsryuuu.traffic.domain.event.event.type.RewardType
+import com.hsryuuu.traffic.kafkaevent.event.Event
+import com.hsryuuu.traffic.kafkaevent.event.type.EventStatus
+import com.hsryuuu.traffic.kafkaevent.event.type.RewardType
 import java.time.LocalDateTime
 import java.util.*
 
@@ -20,8 +20,8 @@ data class EventResponse(
     val updatedAt: LocalDateTime
 ) {
     companion object {
-        fun from(event: Event): com.hsryuuu.traffic.`kafka-event`.event.dto.EventResponse {
-            return com.hsryuuu.traffic.`kafka-event`.event.dto.EventResponse(
+        fun from(event: Event): EventResponse {
+            return EventResponse(
                 id = event.id,
                 title = event.title,
                 description = event.description,

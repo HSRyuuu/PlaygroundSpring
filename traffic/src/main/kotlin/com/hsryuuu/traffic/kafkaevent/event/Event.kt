@@ -1,8 +1,8 @@
 
-package com.hsryuuu.traffic.`kafka-event`.event
+package com.hsryuuu.traffic.kafkaevent.event
 
-import com.hsryuuu.traffic.domain.event.event.type.EventStatus
-import com.hsryuuu.traffic.domain.event.event.type.RewardType
+import com.hsryuuu.traffic.kafkaevent.event.type.EventStatus
+import com.hsryuuu.traffic.kafkaevent.event.type.RewardType
 import jakarta.persistence.*
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedBy

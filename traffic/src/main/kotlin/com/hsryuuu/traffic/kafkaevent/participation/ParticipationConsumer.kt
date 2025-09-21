@@ -1,7 +1,7 @@
-package com.hsryuuu.traffic.`kafka-event`.participation;
+package com.hsryuuu.traffic.kafkaevent.participation;
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.hsryuuu.traffic.domain.event.participation.dto.ParticipationRequestMessage
+import com.hsryuuu.traffic.kafkaevent.participation.dto.ParticipationRequestMessage
 
 import org.apache.kafka.clients.consumer.ConsumerRecord
 import org.springframework.kafka.annotation.KafkaListener
@@ -21,7 +21,7 @@ class ParticipationConsumer(
 
         val message = objectMapper.readValue(json, ParticipationRequestMessage::class.java)
 
-        val participation = com.hsryuuu.traffic.`kafka-event`.participation.EventParticipation(
+        val participation = EventParticipation(
             eventId = message.eventId,
             userId = message.userId
         )

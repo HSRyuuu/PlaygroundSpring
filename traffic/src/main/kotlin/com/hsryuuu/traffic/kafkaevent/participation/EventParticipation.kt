@@ -1,4 +1,4 @@
-package com.hsryuuu.traffic.`kafka-event`.participation;
+package com.hsryuuu.traffic.kafkaevent.participation;
 
 import jakarta.persistence.*
 import org.springframework.data.annotation.CreatedDate

@@ -1,13 +1,13 @@
-package com.hsryuuu.traffic.`kafka-event`.participation;
+package com.hsryuuu.traffic.kafkaevent.participation;
 
-import com.hsryuuu.traffic.domain.event.participation.dto.ParticipationRequestMessage
+import com.hsryuuu.traffic.kafkaevent.participation.dto.ParticipationRequestMessage
 import org.springframework.web.bind.annotation.*
 import java.util.*
 
 @RestController
 @RequestMapping("/api/participation")
 class ParticipationTestController(
-    private val participationProducer: com.hsryuuu.traffic.`kafka-event`.participation.ParticipationProducer
+    private val participationProducer: ParticipationProducer
 ) {
     @PostMapping
     fun participate(

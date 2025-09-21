@@ -1,6 +1,6 @@
-package com.hsryuuu.traffic.`kafka-event`.event.dto
+package com.hsryuuu.traffic.kafkaevent.event.dto
 
-import com.hsryuuu.traffic.domain.event.event.type.RewardType
+import com.hsryuuu.traffic.kafkaevent.event.type.RewardType
 import java.time.LocalDateTime
 
 data class EventCreateRequest(

@@ -1,7 +1,7 @@
-package com.hsryuuu.traffic.`kafka-event`.participation
+package com.hsryuuu.traffic.kafkaevent.participation
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.hsryuuu.traffic.domain.event.participation.dto.ParticipationRequestMessage
+import com.hsryuuu.traffic.kafkaevent.participation.dto.ParticipationRequestMessage
 import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.stereotype.Service
 import java.time.LocalDateTime
@@ -17,7 +17,7 @@ class ParticipationProducer(
 
     fun send(message: ParticipationRequestMessage){
         val json = objectMapper.writeValueAsString(message)
-        kafkaTemplate.send(com.hsryuuu.traffic.`kafka-event`.participation.ParticipationProducer.Companion.TOPIC, json)
+        kafkaTemplate.send(TOPIC, json)
         println("✅ Kafka 메시지 전송: ${LocalDateTime.now()}")
         println(json)
     }
