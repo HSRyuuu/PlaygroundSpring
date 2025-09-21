@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: traffic
+  datasource:
+    url: jdbc:postgresql://localhost:5432/testdb
+    username: root
+    password: test
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          batch_size: 1000
+
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    display-request-duration: true
