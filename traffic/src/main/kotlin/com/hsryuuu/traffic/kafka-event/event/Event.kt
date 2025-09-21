@@ -1,5 +1,5 @@
 
-package com.hsryuuu.traffic.domain.event.event
+package com.hsryuuu.traffic.`kafka-event`.event
 
 import com.hsryuuu.traffic.domain.event.event.type.EventStatus
 import com.hsryuuu.traffic.domain.event.event.type.RewardType

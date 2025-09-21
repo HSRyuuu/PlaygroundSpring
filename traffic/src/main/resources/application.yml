@@ -2,7 +2,7 @@ spring:
   application:
     name: traffic
   datasource:
-    url: jdbc:postgresql://localhost:5432/testdb
+    url: jdbc:postgresql://localhost:5432/test
     username: root
     password: test
     driver-class-name: org.postgresql.Driver
@@ -15,6 +15,16 @@ spring:
         format_sql: true
         jdbc:
           batch_size: 1000
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: event-consumer-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
 
 
 springdoc:

@@ -16,3 +16,17 @@ create table event
 
 alter table event
     owner to root;
+
+
+create table event_participation
+(
+    id              serial
+        primary key,
+    event_id        uuid         not null,
+    user_id         varchar(100) not null,
+    participated_at timestamp    not null
+);
+
+alter table event_participation
+    owner to root;
+

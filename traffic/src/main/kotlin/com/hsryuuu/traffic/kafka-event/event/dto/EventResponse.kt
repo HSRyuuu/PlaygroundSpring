@@ -1,4 +1,4 @@
-package com.hsryuuu.traffic.domain.event.event.dto
+package com.hsryuuu.traffic.`kafka-event`.event.dto
 
 import com.hsryuuu.traffic.domain.event.event.Event
 import com.hsryuuu.traffic.domain.event.event.type.EventStatus
@@ -20,8 +20,8 @@ data class EventResponse(
     val updatedAt: LocalDateTime
 ) {
     companion object {
-        fun from(event: Event): EventResponse {
-            return EventResponse(
+        fun from(event: Event): com.hsryuuu.traffic.`kafka-event`.event.dto.EventResponse {
+            return com.hsryuuu.traffic.`kafka-event`.event.dto.EventResponse(
                 id = event.id,
                 title = event.title,
                 description = event.description,
