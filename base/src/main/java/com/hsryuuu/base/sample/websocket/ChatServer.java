@@ -1,4 +1,4 @@
-package com.hsryuuu.base.java.websocket;
+package com.hsryuuu.base.sample.websocket;
 
 import java.io.IOException;
 import java.net.ServerSocket;

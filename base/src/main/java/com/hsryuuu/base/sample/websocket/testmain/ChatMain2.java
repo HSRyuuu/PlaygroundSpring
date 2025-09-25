@@ -1,6 +1,6 @@
-package com.hsryuuu.base.java.websocket.testmain;
+package com.hsryuuu.base.sample.websocket.testmain;
 
-import com.hsryuuu.base.java.websocket.ChatClient;
+import com.hsryuuu.base.sample.websocket.ChatClient;
 import java.io.IOException;
 
 public class ChatMain2 {

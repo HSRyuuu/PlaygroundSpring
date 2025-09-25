@@ -1,6 +1,6 @@
-package com.hsryuuu.base.java.websocket.testmain;
+package com.hsryuuu.base.sample.websocket.testmain;
 
-import com.hsryuuu.base.java.websocket.ChatServer;
+import com.hsryuuu.base.sample.websocket.ChatServer;
 
 public class ServerMain {
     public static void main(String[] args) {
