@@ -1,4 +1,4 @@
-package com.hsryuuu.base.application.config;
+package com.hsryuuu.base.jpa.config;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;

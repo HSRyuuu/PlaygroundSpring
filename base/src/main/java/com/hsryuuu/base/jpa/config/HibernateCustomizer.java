@@ -1,4 +1,4 @@
-package com.hsryuuu.base.application.config;
+package com.hsryuuu.base.jpa.config;
 
 import java.util.Map;
 import org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy;

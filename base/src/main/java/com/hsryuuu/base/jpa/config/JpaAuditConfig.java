@@ -1,4 +1,4 @@
-package com.hsryuuu.base.application.config;
+package com.hsryuuu.base.jpa.config;
 
 import lombok.NonNull;
 import org.springframework.context.annotation.Configuration;
@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @Configuration
 @EnableJpaAuditing
-public class JpaConfig implements AuditorAware<UUID> {
+public class JpaAuditConfig implements AuditorAware<UUID> {
 
     @Override
     @NonNull
