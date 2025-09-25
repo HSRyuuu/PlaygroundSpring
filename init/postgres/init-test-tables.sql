@@ -1,3 +1,15 @@
+-- ### TestTable ###
+create table test_table
+(
+    id   bigint not null
+        primary key,
+    name varchar(255)
+);
+
+alter table test_table
+    owner to root;
+
+
 -- ### UserGroup ###
 create table user_group
 (

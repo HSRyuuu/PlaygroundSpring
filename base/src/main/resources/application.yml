@@ -37,3 +37,4 @@ logging:
     org.springframework.security.web.FilterChainProxy: DEBUG
     org.springframework.security.web.access: DEBUG
     org.springframework.security.web.access.intercept: DEBUG
+    org.springframework.transaction: DEBUG
